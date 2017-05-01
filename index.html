@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Hello world</title>
-    </head>
-    <body>
-        <p>Hello world from my website</p>
-        <img src="image.png" alt="here must be some image"></img>
-    </body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>The weather forecast</title>
+</head>
+
+<body>
+    <div class="container">
+    
+        <div class="menu-bar">
+            <span>The Weather Forecast</span>
+            <span>Contacts</span>    
+        </div>
+        
+        <div class="selects">
+            
+            <!-- Will dynamically init by js and some json file with array of countries and cities and ids in it-->
+            <select id="country-dropdown">
+                 <option value="Ukraine">Ukraine</option>
+                 <option value="Germany">Germany</option>
+                 <option value="Italy">Italy</option>
+                 <option value="Spain">Spain</option>
+            </select>
+            
+            <!-- Will dynamically init according to selected country -->
+            <select id="city-dropdown" hidden>
+                 <option value="Will dinamic init">Will dinamic init</option>
+            </select>    
+        </div>
+
+        <div class="button-div">
+            <!-- for submiting request with specific id of location -->
+            <input type="button" id="wheather-button" value="show the weather" onclick="request()">
+            <script type="text/javascript" >
+                function request() {
+                    var locationId = 'there will be some id';
+                    window.location='/weather.html?locationId=' + locationId;
+                }
+            </script>
+        </div>    
+        
+    </div>
+</body>
+
 </html>

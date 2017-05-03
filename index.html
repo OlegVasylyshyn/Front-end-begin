@@ -32,20 +32,20 @@
             
             <!-- Will dynamically init by js and some json file with array of countries and cities and ids in it-->
             <select id="country-dropdown" onchange="hideCountryDropDown()">
-                <option value="Choose" class="country-option" disabled selected value >Choose your country</option>
-                <option value="Ukraine" class="country-option">Ukraine</option>
-                <option value="Germany" class="country-option">Germany</option>
-                <option value="Italy" class="country-option">Italy</option>
-                <option value="Spain" class="country-option">Spain</option>
+                <option value="Choose" class="select-option" disabled selected value >Choose your country</option>
+                <option value="Ukraine" class="select-option">Ukraine</option>
+                <option value="Germany" class="select-option">Germany</option>
+                <option value="Italy" class="select-option">Italy</option>
+                <option value="Spain" class="select-option">Spain</option>
             </select>
             
             
             <!-- Will dynamically init according to selected country -->
             <select id="city-dropdown" hidden onchange="hideCityDropDown()">
-                 <option value="Choose" disabled selected value>Choose your city</option>
-                 <option value="Will dinamic init">Will dinamic init</option>
-                 <option value="Will dinamic init">Will dinamic init</option>
-                 <option value="Will dinamic init">Will dinamic init</option>
+                 <option value="Choose" class="select-option" disabled selected value>Choose your city</option>
+                 <option value="Will dinamic init" class="select-option">Will dinamic init</option>
+                 <option value="Will dinamic init" class="select-option">Will dinamic init</option>
+                 <option value="Will dinamic init" class="select-option">Will dinamic init</option>
             </select>    
         </div>
 

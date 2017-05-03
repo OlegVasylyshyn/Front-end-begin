@@ -22,10 +22,15 @@
         };
         
         var mapOfParameters = getParameters();
+        
+        // if all needed parameters don't set user will be redirected on index.html page
+        if(!validateParameters(mapOfParameters)){
+            window.location='./index.html';
+        }
+        
         console.log('country : ', mapOfParameters['country']);
         console.log('city : ', mapOfParameters['city']);
         console.log('locationId : ', mapOfParameters['locationId']);
-        
         
         window.onload = function() {
             document.getElementById("country").innerHTML = mapOfParameters.country;
@@ -37,6 +42,14 @@
             // 3) init all elements on view
             
         };
+        
+        function validateParameters(mapOfParameters){
+            if(mapOfParameters.country === null || mapOfParameters.country === undefined) return false;
+            if(mapOfParameters.city === null || mapOfParameters.city === undefined) return false;
+            if(mapOfParameters.locationId === null || mapOfParameters.locationId === undefined) return false;
+            // else
+            return true;
+        }
         
     </script>
 

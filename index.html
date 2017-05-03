@@ -4,9 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>The weather forecast</title>
+    <script type="text/javascript" >
+    
+        function hideCountryDropDown() {
+            document.getElementById("country-dropdown").style.display = 'none';
+            document.getElementById("city-dropdown").style.display = 'block';
+        }
+        
+        function hideCityDropDown() {
+            document.getElementById("city-dropdown").style.display = 'none';
+            document.getElementById("showWeatherButton").style.display = 'block';
+        }
+        
+    </script>
 </head>
 
 <body>
+    
     <div class="container">
     
         <div class="menu-bar">
@@ -17,20 +31,25 @@
         <div class="selects">
             
             <!-- Will dynamically init by js and some json file with array of countries and cities and ids in it-->
-            <select id="country-dropdown">
-                 <option value="Ukraine">Ukraine</option>
-                 <option value="Germany">Germany</option>
-                 <option value="Italy">Italy</option>
-                 <option value="Spain">Spain</option>
+            <select id="country-dropdown" onchange="hideCountryDropDown()">
+                <option value="Choose" class="country-option" disabled selected value >Choose your country</option>
+                <option value="Ukraine" class="country-option">Ukraine</option>
+                <option value="Germany" class="country-option">Germany</option>
+                <option value="Italy" class="country-option">Italy</option>
+                <option value="Spain" class="country-option">Spain</option>
             </select>
             
+            
             <!-- Will dynamically init according to selected country -->
-            <select id="city-dropdown" hidden>
+            <select id="city-dropdown" hidden onchange="hideCityDropDown()">
+                 <option value="Choose" disabled selected value>Choose your city</option>
+                 <option value="Will dinamic init">Will dinamic init</option>
+                 <option value="Will dinamic init">Will dinamic init</option>
                  <option value="Will dinamic init">Will dinamic init</option>
             </select>    
         </div>
 
-        <div class="button-div">
+        <div class="button-div" id="showWeatherButton" hidden>
             <!-- for submiting request with specific id of location -->
             <input type="button" id="wheather-button" value="show the weather" onclick="request()">
             <script type="text/javascript" >

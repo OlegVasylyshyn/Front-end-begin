@@ -6,7 +6,7 @@
 
     <script type="text/javascript">
         
-        var getfParameters = function () {
+        var getParameters = function () {
             // This function is anonymous, is executed immediately
             var queryString = [];
             var query = window.location.search.substring(1);
@@ -21,7 +21,7 @@
             return queryString;
         };
         
-        var mapOfParameters = getfParameters();
+        var mapOfParameters = getParameters();
         console.log('country : ', mapOfParameters['country']);
         console.log('city : ', mapOfParameters['city']);
         console.log('locationId : ', mapOfParameters['locationId']);
@@ -33,7 +33,7 @@
         
             // TODO 
             // 1) some request using mapOfParameters.locationId
-            // 2) handing response from request
+            // 2) handling response from request
             // 3) init all elements on view
             
         };

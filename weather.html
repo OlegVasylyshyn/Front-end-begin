@@ -5,32 +5,30 @@
     <title>The weather forecast</title>
 
     <script type="text/javascript">
-        
-        var getParameters = function () {
-            // This function is anonymous, is executed immediately
-            var queryString = [];
-            var query = window.location.search.substring(1);
-
-            var vars = query.split("&");
-            for (var i=0;i<vars.length;i++) {
-                var pair = vars[i].split("=");
-                
-                queryString[pair[0]] = decodeURIComponent(pair[1]);
-                
-            }
-            return queryString;
+    
+        var getParameters = function(){
+            var parameters = {};
+            parameters.country = window.localStorage.getItem('country');
+            parameters.city = window.localStorage.getItem('city');
+            parameters.locationId = window.localStorage.getItem('locationId');
+            
+            window.localStorage.removeItem('country');
+            window.localStorage.removeItem('city');
+            window.localStorage.removeItem('locationId');
+            // window.localStorage.clear();
+            return parameters;
         };
         
         var mapOfParameters = getParameters();
-        
+    
         // if all needed parameters don't set user will be redirected on index.html page
         if(!validateParameters(mapOfParameters)){
             window.location='./index.html';
         }
         
-        console.log('country : ', mapOfParameters['country']);
-        console.log('city : ', mapOfParameters['city']);
-        console.log('locationId : ', mapOfParameters['locationId']);
+        console.log('country : ', mapOfParameters.country);
+        console.log('city : ', mapOfParameters.city);
+        console.log('locationId : ', mapOfParameters.locationId);
         
         window.onload = function() {
             document.getElementById("country").innerHTML = mapOfParameters.country;

@@ -57,7 +57,14 @@
                     var locationId = 'there will be some id';
                     var country = 'Ukraine';
                     var city = 'Lviv';
-                    window.location='./weather.html?locationId=' + locationId + '&country=' + country + '&city=' + city;
+                    
+                    // save in local storage 
+                    
+                    window.localStorage.setItem('locationId', locationId);
+                    window.localStorage.setItem('country', country);
+                    window.localStorage.setItem('city', city);
+                    
+                    window.location='./weather.html';
                 }
             </script>
         </div>    
